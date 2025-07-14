@@ -4,9 +4,13 @@ import argparse
 import os
 from sklearn.model_selection import train_test_split
 
-input_data_path = "../data/cs-training.csv"
-train_output_path = "../processing/train/"
-validation_output_path = "../processing/validation/"
+#Corndel Level 6 AI/ML Engineer Workshop 1
+#Data Processing Stage Script
+#Note that the /opt/ml/ paths are automagically created by SageMaker
+
+input_data_path = "/opt/ml/data/cs-training.csv"
+train_output_path = "/opt/ml/processing/train/"
+validation_output_path = "/opt/ml/processing/validation/"
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
