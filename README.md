@@ -92,3 +92,7 @@ You will see the script's output directly in the notebook. Once it finishes, you
 ## Phase 4: Reflect on the Ethics of this Pipeline
 
 Your PDE will guide you in your discussion of the Ethics task related to this pipeline.
+
+<img src="Ethics First AI.png"><br>
+
+We have created for you a cheat sheet (above) of the most important ethical tasks at each stage.
