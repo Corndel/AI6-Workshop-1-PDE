@@ -17,9 +17,19 @@ from sagemaker.workflow.functions import JsonGet
 
 #Corndel Level 6 AI/ML Engineer
 #Amazon SageMaker Pipeline Deployment Stage
+
+
+def get_account_id():
+    sts_client = boto3.client("sts")
+    identity = sts_client.get_caller_identity()
+    return identity["Account"]
+
+
 # --- IMPORTANT --- 
 # Ensure the cs-training.csv file is in this S3 location.
-input_data_s3_uri = f"s3://quickloan-ml-us-east-1-975050197907/input/cs-training.csv"
+input_data_s3_uri = f"s3://quickloan-ml-us-east-1-{get_account_id()}/input/cs-training.csv"
+
+
 
 def run_pipeline():
     """Defines and executes the SageMaker ML Pipeline."""
