@@ -8,7 +8,7 @@ from sklearn.model_selection import train_test_split
 #Data Processing Stage Script
 #Note that the /opt/ml/ paths are automagically created by SageMaker
 
-input_data_path = "/opt/ml/data/cs-training.csv"
+input_data_path = "/opt/ml/processing/input/cs-training.csv"
 train_output_path = "/opt/ml/processing/train/"
 validation_output_path = "/opt/ml/processing/validation/"
 
