@@ -87,7 +87,7 @@ def run_pipeline():
     evaluation_report = PropertyFile(name="EvaluationReport", output_name="evaluation", path="evaluation.json")
     script_evaluator = ScriptProcessor(
         command=["python3"],
-        image_uri=sagemaker.image_uris.retrieve("sklearn", region, "0.23-1"),
+        image_uri=sagemaker.image_uris.retrieve("xgboost", region, "1.5-1"),
         instance_type="ml.m5.large",
         instance_count=1,
         role=sagemaker_role,
