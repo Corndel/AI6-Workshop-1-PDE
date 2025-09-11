@@ -13,7 +13,9 @@ model_path = "/opt/ml/processing/model/model.tar.gz"
 if __name__ == "__main__":
     with tarfile.open(model_path, "r:gz") as tar:
         tar.extractall("./model")
-    model = joblib.load("./model/xgboost-model")
+
+    model = xgboost.Booster()
+    model.load_model("./model/xgboost-model")
 
     df = pd.read_csv(test_data_path, header=None)
 
