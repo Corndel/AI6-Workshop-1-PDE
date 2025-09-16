@@ -82,9 +82,11 @@ This is the first workshop of the Level 6 AI/ML Engineer programme
 6. Open your JupyterLab space by clicking "Run space". This can take a minute or so. (Pay attention to the notification at the bottom of the screen, which will give you a time estimate for completion.)
 7. Once the space is ready, click "Open JupyterLab".
 
-### 2. Upload the Code
+### 2. Upload the Code (and a copy of the data)
 
 1. Using the file browser on the left, upload the *deploy_pipeline.py* script and the *src* folder (with its contents) from the GitHub repository into your JupyterLab environment. It's important that you match the folder structure of the repository i.e. that the *src* folder is adjacent to the *deploy_pipeline.py* script.
+2. Upload a copy of the *cs-training.csv* file from the *AI6-Workshop-1-PDE/data* directory here as well, so that it's in the top-level folder (not in src but above it).
+
 
 ### 3. Create and Run a Notebook
 
@@ -103,10 +105,12 @@ Untitled.ipynb
 4. Click the "Run" button (a ▶ play icon) in the notebook toolbar to execute the cell.
 5. You will see the script's output directly in the notebook. While it's still running, you can navigate to SageMaker Studio -> Pipelines, then click through to your pipeline, and finally through to a specific execution of that pipeline, or order to see the visual graph of your pipeline running.
 
+6. Note that the above could have been done by launching a new Terminal instead of from a new notebook - your coach may explain the difference.
+
 
 ## Phase 4: Reflect on the Ethics of this Pipeline
 
-Your coach will guide you in your discussion of the Ethics task related to this pipeline.
+Your coach will guide you in your discussion of the Ethics task related to this pipeline. You can see it running when you go back to Sagemaker Studio and click on "Pipelines" in the menu on the left. The pipeline should say "Running" for approx. 10 minutes, after which time it should say "Succeeded".
 
 <img src="Ethics First AI.png"><br>
 
