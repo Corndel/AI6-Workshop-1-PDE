@@ -1,3 +1,5 @@
+# This script defines and runs the entire SageMaker ML Pipeline.
+
 import sagemaker
 import boto3
 from sagemaker.workflow.pipeline_context import PipelineSession
@@ -6,8 +8,6 @@ from sagemaker.workflow.steps import ProcessingStep
 from sagemaker.estimator import Estimator
 from sagemaker.workflow.steps import TrainingStep
 from sagemaker.workflow.properties import PropertyFile
-from sagemaker.model import Model
-from sagemaker.workflow.model_step import ModelStep
 from sagemaker.workflow.conditions import ConditionGreaterThanOrEqualTo
 from sagemaker.workflow.condition_step import ConditionStep
 from sagemaker.workflow.pipeline import Pipeline
@@ -15,32 +15,26 @@ from sagemaker.inputs import TrainingInput
 from sagemaker.workflow.step_collections import RegisterModel
 from sagemaker.workflow.functions import JsonGet
 
-#Corndel Level 6 AI/ML Engineer
-#Amazon SageMaker Pipeline Deployment Stage
-
-
 def get_account_id():
+    """Fetches the AWS Account ID from the current session."""
     sts_client = boto3.client("sts")
     identity = sts_client.get_caller_identity()
     return identity["Account"]
 
-
-# --- IMPORTANT --- 
-# Ensure the cs-training.csv file is in this S3 location.
-input_data_s3_uri = f"s3://quickloan-ml-us-east-1-{get_account_id()}/input/cs-training.csv"
-
-
+# --- IMPORTANT ---
+# This S3 URI must point to where you upload your training data.
+input_data_s3_uri = "cs-training.csv"
 
 def run_pipeline():
     """Defines and executes the SageMaker ML Pipeline."""
-    
+
     # 1. Setup: Roles, Sessions, and S3 Locations
     sagemaker_role = sagemaker.get_execution_role()
     region = boto3.Session().region_name
     pipeline_session = PipelineSession()
     default_bucket = pipeline_session.default_bucket()
     base_job_prefix = "quickloan-pipeline"
-        
+
     print(f"Using SageMaker Role: {sagemaker_role}")
     print(f"Using S3 Bucket: {default_bucket}")
 
@@ -72,14 +66,15 @@ def run_pipeline():
         instance_count=1,
         role=sagemaker_role,
         sagemaker_session=pipeline_session,
-        hyperparameters={"objective": "binary:logistic", "num_round": 200}
+        hyperparameters={"objective": "binary:logistic", "num_round": 200},
+        output_path=f"s3://{default_bucket}/{base_job_prefix}/training"
     )
     step_train = TrainingStep(
         name="QuickLoanTrainModel",
         estimator=xgb_estimator,
         inputs={
-            "train": TrainingInput(s3_data=step_process.properties.ProcessingOutputConfig.Outputs["train"].S3Output.S3Uri),
-            "validation": TrainingInput(s3_data=step_process.properties.ProcessingOutputConfig.Outputs["validation"].S3Output.S3Uri)
+            "train": TrainingInput(s3_data=step_process.properties.ProcessingOutputConfig.Outputs["train"].S3Output.S3Uri, content_type="text/csv"),
+            "validation": TrainingInput(s3_data=step_process.properties.ProcessingOutputConfig.Outputs["validation"].S3Output.S3Uri, content_type="text/csv")
         }
     )
 
@@ -87,7 +82,7 @@ def run_pipeline():
     evaluation_report = PropertyFile(name="EvaluationReport", output_name="evaluation", path="evaluation.json")
     script_evaluator = ScriptProcessor(
         command=["python3"],
-        image_uri=sagemaker.image_uris.retrieve("xgboost", region, "1.5-1"),
+        image_uri=sagemaker.image_uris.retrieve("xgboost", region, "1.5-1"), # Corrected container
         instance_type="ml.m5.large",
         instance_count=1,
         role=sagemaker_role,
@@ -107,14 +102,11 @@ def run_pipeline():
 
     # 5. Pipeline Step: Conditional Model Registration
     model_package_group_name = "QuickLoanCreditRiskModels"
-    
-    # --- CORRECTED CODE BLOCK ---
-    # Use the RegisterModel step for registering the model package
     step_register = RegisterModel(
         name="RegisterQuickLoanModel",
         estimator=xgb_estimator,
         model_data=step_train.properties.ModelArtifacts.S3ModelArtifacts,
-        content_types=["text/csv"],
+        content_types=["text/csv"], # Must match the data format
         response_types=["text/csv"],
         inference_instances=["ml.t2.medium", "ml.m5.large"],
         transform_instances=["ml.m5.xlarge"],
@@ -126,7 +118,7 @@ def run_pipeline():
         left=JsonGet(
             step_name=step_evaluate.name,
             property_file=evaluation_report,
-            json_path="regression_metrics.auc.value"
+            json_path="regression_metrics.auc.value" # This key must match what's in evaluate.py
         ),
         right=0.75,  # AUC Threshold
     )
