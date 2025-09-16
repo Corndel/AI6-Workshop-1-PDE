@@ -37,7 +37,7 @@ This is the first workshop of the Level 6 AI/ML Engineer programme
 
 ### 4. Wait for stack creation to complete
 
-1. Wait for the status for this stack in the "Stacks" panel to change from CREATE_IN_PROGRESS to CREATE_COMPLETE. This may take a few minutes and you may want to click the "Refresh" button in the "Stacks" panel to check progress.
+1. Wait for the status for this stack in the "Stacks" panel to change from `CREATE_IN_PROGRESS` to `CREATE_COMPLETE`. This may take a few minutes and you may want to click the "Refresh" button in the "Stacks" panel to check progress.
 
 ## Phase 2: Upload Data to the S3 Bucket
 ### 1. Navigate to S3
@@ -78,20 +78,30 @@ This is the first workshop of the Level 6 AI/ML Engineer programme
 
 > **JupyterLab** is an open-source web-based interactive development environment for working with notebooks, code, and data. It supports multiple programming languages (like Python, R, and Julia) and provides a flexible interface for data science, machine learning, and scientific computing workflows.
 
-5. Name your JupyterLab e.g. `QuickLoan`.
-6. Open your JupyterLab space by clicking "Run space".
+5. Name your JupyterLab e.g. `QuickLoan` and click "Create space".
+6. Open your JupyterLab space by clicking "Run space". This can take a minute or so. (Pay attention to the notification at the bottom of the screen, which will give you a time estimate for completion.)
+7. Once the space is ready, click "Open JupyterLab".
 
 ### 2. Upload the Code
 
-1. Using the file browser on the left, upload the *deploy_pipeline.py* script and the *src* folder (with its contents) from the GitHub repository into your JupyterLab environment.
+1. Using the file browser on the left, upload the *deploy_pipeline.py* script and the *src* folder (with its contents) from the GitHub repository into your JupyterLab environment. It's important that you match the folder structure of the repository i.e. that the *src* folder is adjacent to the *deploy_pipeline.py* script.
 
 ### 3. Create and Run a Notebook
 
-1. In the JupyterLab menu, click File -> New -> Notebook. Select the default Python 3 kernel.
-2. A new .ipynb notebook will open.
-3. In the first cell, type the following "magic command" that executes your script: `!python deploy_pipeline.py`
+1. In the JupyterLab menu, click the "Python 3 (ipykernel)" button under the "Notebook" heading in the Launcher tab, *or* click File -> New -> Notebook. Select the default Python 3 kernel.
+2. A new .ipynb notebook will open. It's important that this has opened at the top level (i.e. adjacent to the *src* folder, *not* within it), otherwise subsequent commands won't work. Your folder structure should look like this:
+
+```
+src/
+    evaluate.py
+    process.py
+deploy_pipeline.py
+Untitled.ipynb
+```
+
+3. In the first cell of the notebook, type the following command that executes your script: `!python deploy_pipeline.py`
 4. Click the "Run" button (a ▶ play icon) in the notebook toolbar to execute the cell.
-5. You will see the script's output directly in the notebook. Once it finishes, you can navigate to SageMaker Studio -> Pipelines, then click through to your pipeline, and finally through to a specific execution of that pipeline, or order to see the visual graph of your pipeline running.
+5. You will see the script's output directly in the notebook. While it's still running, you can navigate to SageMaker Studio -> Pipelines, then click through to your pipeline, and finally through to a specific execution of that pipeline, or order to see the visual graph of your pipeline running.
 
 
 ## Phase 4: Reflect on the Ethics of this Pipeline
