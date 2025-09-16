@@ -106,8 +106,24 @@ Untitled.ipynb
 
 ## Phase 4: Reflect on the Ethics of this Pipeline
 
-Your PDE will guide you in your discussion of the Ethics task related to this pipeline.
+Your coach will guide you in your discussion of the Ethics task related to this pipeline.
 
 <img src="Ethics First AI.png"><br>
 
 We have created for you a cheat sheet (above) of the most important ethical tasks at each stage.
+
+By now, your pipeline has been executing for several minutes. The data has been processed, and the XGBoost model is being trained on a powerful cloud instance. Soon, a file named model.tar.gz will be created and saved to S3. While the pipeline automates the technical steps, this is the perfect time to reflect on what this model file truly represents and the responsibilities that come with it.
+
+### The Model as a Regulated Asset
+
+A trained model file like model.tar.gz isn't just a technical asset; it's a concentration of data and decision-making logic, making it subject to numerous policies and regulations. For the QuickLoan model you are building, key considerations would include:
+
+> Data Privacy: The cs-training.csv file contains sensitive financial information. Even if personally identifiable information is removed, the model is still a derivative of this data and falls under regulations like GDPR. Policies must govern its access to ensure it cannot be reverse-engineered to reveal information about the individuals in the training set.
+
+> Intellectual Property: The trained model is a valuable corporate asset for the fictional "QuickLoan" company. The model.tar.gz file would be protected as a trade secret. Internal policies would strictly control who can access or copy this file to protect the company's investment.
+
+> Fairness and Safety: Since this is a financial model for loan applications, fairness regulations from bodies like the UK's Financial Conduct Authority (FCA) are paramount. The model you are creating cannot be an unexplainable "black box." In a real-world scenario, the company would be required to prove that the model's decisions are fair and not discriminatory based on protected characteristics.
+
+> Security and Export Controls: While less likely for this specific model, advanced AI models can be classified as dual-use technology. In such cases, transferring a model.tar.gz file across international borders could be restricted under national export control laws.
+
+As you watch your pipeline complete in the AWS console, consider how these policies would shape the way your model.tar.gz file is stored, versioned, and ultimately deployed. This intersection of technology, law, and ethics is central to the role of a modern AI Engineer.
