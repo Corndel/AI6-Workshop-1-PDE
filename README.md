@@ -39,15 +39,16 @@ This is the first workshop of the Level 6 AI/ML Engineer programme
 src/
     evaluate.py
     process.py
+user-default-efs/
 cs-training.csv
 deploy_pipeline.py
 Untitled.ipynb
 ```
 
-3. In the first cell of the notebook, type the following command that executes your script: `!python deploy_pipeline.py`
+3. In the first cell of the notebook, type the following command that executes your script: `!python deploy_pipeline.py`. (You could alternatively run this from a new Terminal, if you're feeling adventurous!)
 4. Click the "Run" button (a ▶ play icon) in the notebook toolbar to execute the cell.
 5. You will see the script's output directly in the notebook. While it's still running, you can navigate to SageMaker Studio -> Pipelines, then click through to your pipeline, and finally through to a specific execution of that pipeline, or order to see the visual graph of your pipeline running.
-6. Note that the above could have been done by launching a new Terminal instead of from a new notebook - your coach may explain the difference.
+6. It will take 10-15 minutes for the pipeline to complete.
 
 
 ## Phase 4: Reflect on the Ethics of this Pipeline
