@@ -1,5 +1,5 @@
 # AI6-Workshop-1-PDE
-This is the first workshop of the Level 6 AI/ML Engineer programme. Read it together with model_card.md
+This is the first workshop of the Level 6 AI/ML Engineer programme. Read it together with model_card.md and lessons_learned.md.
 
 ## Phase 1: Run the Pipeline in JupyterLab
 ### 1. Create a JupyterLab space
