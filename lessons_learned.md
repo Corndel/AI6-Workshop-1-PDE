@@ -1,3 +1,4 @@
+## Corndel - Level 6 Applied AI Engineering
 # 📝 Lessons-Learnt Log: QuickLoan Workshop
 
 **Name:** `___________________________`
@@ -25,7 +26,7 @@
 ## 2. Observations During the Build
 
 * **Assumptions I Made:**
-    > _e.g., "I assumed the data was clean," or "I assumed the default hyperparameters were good enough."_
+    > _e.g., "I assumed the data was clean," and/or "I assumed the default hyperparameters were good enough."_
 
 * **Unexpected Issues:**
     > _e.g., "The pipeline took longer than expected," or "I had a permissions error with my S3 bucket."_
@@ -47,7 +48,7 @@
     > _Did you think about who has access to the data? How are you ensuring the model doesn't discriminate against protected groups?_
 
 * **What evidence would a regulator or stakeholder need to see to trust this model?**
-    > _Think about model cards, fairness reports, explainability reports (like SHAP), and logs of who accessed the model._
+    > _Think about model cards, fairness reports, explainability reports and logs of who accessed the model._
 
 ---
 
