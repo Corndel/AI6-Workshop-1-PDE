@@ -1,6 +1,6 @@
-# Model Card: QuickLoan Credit Scoring Model
+# Model Card: QuickLoan Credit Scoring Model (L6 ML/AI Engineering)
 
-This model card provides information about the machine learning model developed for the fictional "QuickLoan" company as part of the AI6-Workshop-1-PDE.
+This model card provides information about the machine learning model developed for the fictional "QuickLoan" company as part of Corndel AI6 Workshop 1.
 
 ## Model Details
 
