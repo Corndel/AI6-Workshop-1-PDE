@@ -1,6 +1,6 @@
 # 🛡️ Pipeline Risk Assessment Grid
 
-Use this 2x2 grid to categorize the risks you identified in your **Lessons-Learnt Log**. The goal is to prioritize which risks require the most attention.
+Use this 2x2 grid to categorize the risks you identified in your **Lessons-Learnt Log**. The goal is to prioritise which risks require the most attention.
 
 A **risk** is any potential event that could cause your pipeline to fail, produce incorrect results, or have a negative real-world consequence.
 
@@ -24,7 +24,7 @@ A **risk** is any potential event that could cause your pipeline to fail, produc
 
 ---
 
-## Your Prioritized Risks
+## Your Prioritised Risks
 
 After filling out the grid, list the risks you will focus on, starting with the **Critical** ones.
 
