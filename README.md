@@ -72,11 +72,11 @@ A trained model file like model.tar.gz isn't just a technical asset; it's a conc
 
 > Fairness and Safety: Since this is a financial model for loan applications, fairness regulations from bodies like the UK's Financial Conduct Authority (FCA) are paramount. The model you are creating cannot be an unexplainable "black box." In a real-world scenario, the company would be required to prove that the model's decisions are fair and not discriminatory based on protected characteristics.
 
->  ### 🔎 Mini Exercise: Model.tar.gz Meets the EU AI Act
-> 
+### 🔎 Mini Exercise: Model.tar.gz Meets the EU AI Act
+
 > Your pipeline has created a `model.tar.gz` file — a compressed artefact holding the trained QuickLoan model.  
 > Imagine you are presenting this file to a regulator or compliance officer.  
-> 
+
 > 1. **Risk Category**  
 >    - Using the EU AI Act cheatsheet, how would you categorise this model?  
 >    - Is it *high-risk* (e.g. access to essential services like credit scoring)? Could it even approach *unacceptable risk* in certain contexts?
@@ -89,8 +89,9 @@ A trained model file like model.tar.gz isn't just a technical asset; it's a conc
 > 3. **Lifecycle Thinking**  
 >    - Remember: the model file isn’t static. It will be versioned, deployed, monitored, and eventually decommissioned.  
 >    - Using the Council of Europe Framework Convention cheatsheet, what safeguards should be applied at different lifecycle stages (e.g. testing, monitoring, documenting risks)?
-> 
-> ⚖️ **Prompt for Discussion**  
+
+⚖️ **Prompt for Discussion**  
+
 > If this model.tar.gz were leaked, misused, or audited tomorrow, what would be the biggest ethical and legal risks for QuickLoan?  
 > What steps could you take *today* to reduce those risks?
 > 
