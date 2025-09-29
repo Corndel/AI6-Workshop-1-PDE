@@ -1,4 +1,5 @@
-# AI6-Workshop-1-PDE
+# Corndel - Level 6 Applied AI Engineering
+# AI6 Workshop 1
 This is the first workshop of the Level 6 AI/ML Engineer programme. Read it together with model_card.md, risks_grid.md and lessons_learned.md.
 
 ## Phase 1: Run the Pipeline in JupyterLab
