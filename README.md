@@ -72,6 +72,28 @@ A trained model file like model.tar.gz isn't just a technical asset; it's a conc
 
 > Fairness and Safety: Since this is a financial model for loan applications, fairness regulations from bodies like the UK's Financial Conduct Authority (FCA) are paramount. The model you are creating cannot be an unexplainable "black box." In a real-world scenario, the company would be required to prove that the model's decisions are fair and not discriminatory based on protected characteristics.
 
+>  ### 🔎 Mini Exercise: Model.tar.gz Meets the EU AI Act
+> 
+> Your pipeline has created a `model.tar.gz` file — a compressed artefact holding the trained QuickLoan model.  
+> Imagine you are presenting this file to a regulator or compliance officer.  
+> 
+> 1. **Risk Category**  
+>    - Using the EU AI Act cheatsheet, how would you categorise this model?  
+>    - Is it *high-risk* (e.g. access to essential services like credit scoring)? Could it even approach *unacceptable risk* in certain contexts?
+> 
+> 2. **Obligations Check**  
+>    - Pick three obligations from the cheatsheet (e.g. data governance, transparency, human oversight).  
+>    - How would you evidence compliance for this specific file?  
+>    - What documentation, testing or oversight mechanisms would you provide?
+> 
+> 3. **Lifecycle Thinking**  
+>    - Remember: the model file isn’t static. It will be versioned, deployed, monitored, and eventually decommissioned.  
+>    - Using the Council of Europe Framework Convention cheatsheet, what safeguards should be applied at different lifecycle stages (e.g. testing, monitoring, documenting risks)?
+> 
+> ⚖️ **Prompt for Discussion**  
+> If this model.tar.gz were leaked, misused, or audited tomorrow, what would be the biggest ethical and legal risks for QuickLoan?  
+> What steps could you take *today* to reduce those risks?
+> 
 > Security and Export Controls: While less likely for this specific model, advanced AI models can be classified as dual-use technology. In such cases, transferring a model.tar.gz file across international borders could be restricted under national export control laws.
 
 As you watch your pipeline complete in the AWS console, consider how these policies would shape the way your model.tar.gz file is stored, versioned, and ultimately deployed. This intersection of technology, law, and ethics is central to the role of a modern AI Engineer.
