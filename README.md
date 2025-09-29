@@ -74,8 +74,8 @@ A trained model file like model.tar.gz isn't just a technical asset; it's a conc
 
 ### 🔎 Mini Exercise: Model.tar.gz Meets the EU AI Act
 
-> Your pipeline has created a `model.tar.gz` file — a compressed artefact holding the trained QuickLoan model.  
-> Imagine you are presenting this file to a regulator or compliance officer.  
+Your pipeline has created a `model.tar.gz` file — a compressed artefact holding the trained QuickLoan model.  
+Imagine you are presenting this file to a regulator or compliance officer.  
 
 > 1. **Risk Category**  
 >    - Using the EU AI Act cheatsheet, how would you categorise this model?  
