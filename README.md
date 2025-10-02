@@ -52,7 +52,7 @@ Untitled.ipynb
 6. It will take 10-15 minutes for the pipeline to complete.
 
 
-## Phase 4: Reflect on the Ethics of this Pipeline
+## Phase 2: Reflect on the Ethics of this Pipeline
 
 Your coach will guide you in your discussion of the Ethics task related to this pipeline. You can see it running when you go back to Sagemaker Studio and click on "Pipelines" in the menu on the left. The pipeline should say "Running" for approx. 10 minutes, after which time it should say "Succeeded".
 
