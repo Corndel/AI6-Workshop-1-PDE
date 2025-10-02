@@ -5,11 +5,11 @@ This is the first workshop of the Level 6 AI/ML Engineer programme. Read it toge
 ## Phase 1: Run the Pipeline in JupyterLab
 ### 1. Create a JupyterLab space
 
-1. Access the AWS Management Console by your preferred method. For example, launch an AWS AI Cloud Sandbox from [A Cloud Guru](https://app.pluralsight.com/hands-on/playground/ai-sandboxes).
+1. Access the AWS Management Console by your preferred method. For example, launch an AWS AI Cloud Sandbox from [Pluralsight](https://app.pluralsight.com/hands-on/playground/ai-sandboxes).
 
 > The **AWS Management Console** is a web-based interface that allows users to access and manage AWS services visually. It provides tools for configuring, monitoring, and deploying cloud resources without needing to use the command line.
 
-> **A Cloud Guru** is an online learning platform that specialises in cloud computing education, offering courses and hands-on labs for AWS, Azure, Google Cloud, and other technologies. You should be able to access it with the PluralSight credentials you were given when you joined the programme. If you haven't got these, or you've had trouble with the account, please let your Coach know and they'll be able to help.
+> **Pluralsight** is an online learning platform that specialises in cloud computing education, offering courses and hands-on labs for AWS, Azure, Google Cloud, and other technologies. You should be able to access it with the PluralSight credentials you were given when you joined the programme. If you haven't got these, or you've had trouble with the account, please let your Coach know and they'll be able to help.
 
 2. Navigate to the Amazon SageMaker AI service in the AWS environment. (Note that Amazon SageMaker AI was formerly named Amazon SageMaker. The latter is still available in the search in AWS Console, but you will only receive a notice of the name change if you navigate there. You should use the former.)
 
