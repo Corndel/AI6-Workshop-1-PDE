@@ -1,19 +1,27 @@
 # This script defines and runs the entire SageMaker ML Pipeline.
 
-import sagemaker
 import boto3
-from sagemaker.workflow.pipeline_context import PipelineSession
-from sagemaker.processing import ScriptProcessor, ProcessingInput, ProcessingOutput
-from sagemaker.workflow.steps import ProcessingStep
-from sagemaker.estimator import Estimator
-from sagemaker.workflow.steps import TrainingStep
-from sagemaker.workflow.properties import PropertyFile
-from sagemaker.workflow.conditions import ConditionGreaterThanOrEqualTo
-from sagemaker.workflow.condition_step import ConditionStep
-from sagemaker.workflow.pipeline import Pipeline
-from sagemaker.inputs import TrainingInput
-from sagemaker.workflow.step_collections import RegisterModel
-from sagemaker.workflow.functions import JsonGet
+
+try:
+    import sagemaker
+    from sagemaker.workflow.pipeline_context import PipelineSession
+    from sagemaker.processing import ScriptProcessor, ProcessingInput, ProcessingOutput
+    from sagemaker.workflow.steps import ProcessingStep
+    from sagemaker.estimator import Estimator
+    from sagemaker.workflow.steps import TrainingStep
+    from sagemaker.workflow.properties import PropertyFile
+    from sagemaker.workflow.conditions import ConditionGreaterThanOrEqualTo
+    from sagemaker.workflow.condition_step import ConditionStep
+    from sagemaker.workflow.pipeline import Pipeline
+    from sagemaker.inputs import TrainingInput
+    from sagemaker.workflow.step_collections import RegisterModel
+    from sagemaker.workflow.functions import JsonGet
+except (ImportError, ModuleNotFoundError) as exc:
+    raise ImportError(
+        "This workshop requires the SageMaker Python SDK v2 pipeline API. "
+        "Run this in a notebook cell before running this script: "
+        "%pip install -q 'sagemaker>=2.0,<3.0' 'pytz'"
+    ) from exc
 
 def get_account_id():
     """Fetches the AWS Account ID from the current session."""
