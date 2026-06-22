@@ -46,10 +46,17 @@ deploy_pipeline.py
 Untitled.ipynb
 ```
 
-3. In the first cell of the notebook, type the following command that executes your script: `!python deploy_pipeline.py`. (You could alternatively run this from a new Terminal, if you're feeling adventurous!)
-4. Click the "Run" button (a ▶ play icon) in the notebook toolbar to execute the cell.
-5. You will see the script's output directly in the notebook. While it's still running, you can navigate to SageMaker Studio -> Pipelines, then click through to your pipeline, and finally through to a specific execution of that pipeline, or order to see the visual graph of your pipeline running.
-6. It will take 10-15 minutes for the pipeline to complete.
+3. In the first cell of the notebook, install the SageMaker SDK version used by this workshop:
+
+```python
+%pip install -q "sagemaker>=2.0,<3.0" "pytz"
+```
+
+4. Run the cell and wait for the install to complete. If JupyterLab asks you to restart the kernel, restart it before continuing.
+5. In the next cell of the notebook, type the following command that executes your script: `!python deploy_pipeline.py`. (You could alternatively run this from a new Terminal, if you are feeling adventurous.)
+6. Click the "Run" button (a ▶ play icon) in the notebook toolbar to execute the cell.
+7. You will see the script's output directly in the notebook. While it is still running, you can navigate to SageMaker Studio -> Pipelines, then click through to your pipeline, and finally through to a specific execution of that pipeline, in order to see the visual graph of your pipeline running.
+8. It will take 10-15 minutes for the pipeline to complete.
 
 
 ## Phase 2: Reflect on the Ethics of this Pipeline
